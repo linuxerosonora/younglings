@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐧 Linuxeros Sonora 🐧</title>
+</head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init('hopfoQ1uSVqG63lX3');
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            emailjs.sendForm('service_7o7q5pw', 'template_a47s8mc', this)
+                .then(function () {
+                    alert('Ahora tu alma nos pertenece...');
+                }, function (error) {
+                    alert('Tas mal...', error);
+                });
+            document.getElementById("contact-form").reset();
+        });
+    }
+</script>
+
+<style>
+    body {
+        background-image: url(https://lkml.org/images/toprowbg.gif);
+        margin: auto;
+        max-width: 80ch;
+        padding: 1ch 2ch;
+        text-align: center;
+        font-size: 120%;
+    }
+
+    textarea {
+        max-width: 95%;
+    }
+
+    .row {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <h1 style="font-size: 50px">Linuxeros Sonora</h1>
+    <img src="logo.png" alt="Linuxeros Sonora Logo" width="200">
+    <h4>Somos la comunidad de Linux en Sonora y estamos reclutando nuevos miembros, todo aquel que logre resolver el
+        siguiente reto, obtendra acceso root.</h4>
+    <p>Si tuvieses que dejar inutilizable una instalacion de Linux... como lo harias? </p>
+    <p>Se creativo...</p>
+    <form id="contact-form">
+        <textarea class="row" name="message" rows="10" required>#!/bin/bash</textarea>
+        <input type="text" name="user_name" placeholder="Tu nombre" required>
+        <input type="email" name="user_email" placeholder="Tu correo" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p>Si tu solucion es efectiva, te enviaremos un link para acceder a nuestra comunidad.</p>
+
+    <h1 hidden>Buen intento...</h1>
+</body>
+
+</html>
